@@ -1,0 +1,23 @@
+meta:
+  id: my_format
+  file-extension: bin
+seq:
+  - id: magic
+    type: u4
+    doc: magic number
+  - id: header
+    type: header
+    doc: header information
+  - id: data
+    type: u1
+    size: header.data_size
+    doc: data section
+types:
+  header:
+    seq:
+      - id: version
+        type: u1
+        doc: file version
+      - id: data_size
+        type: u4
+        doc: size of data section in bytes
